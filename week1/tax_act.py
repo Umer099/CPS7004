@@ -4,5 +4,10 @@ tax_rule.add_rule(lambda x: x < 12570, "personal Allowance")
 tax_rule. add_rule(lambda x:12570 <= x < 50270, "Basic rate")
 tax_rule. add_rule(lambda x: 50270 <= x < 125140, "higher rate")
 tax_rule. add_rule(lambda x: 50270 <= x < 125140, "Additional rate")
-result = tax_rule.apply_rules(125139)
-print(result)
+print ("""
+WELCOME TO THE TAX RULE ENGINE
+""")
+input = int(input("ENTER THE VALUE"))
+result = tax_rule.apply_rules(input)
+
+print(f"Your tax return is {result}.")
