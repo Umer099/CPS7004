@@ -4,20 +4,23 @@ class Location:
         self.__x = x
         self.__y = y
 
+    def __str__(self):
+        return f"location is {self.__x}, {self.__y}"
+
     def get_x(self):
         return self.__x
 
     def get_y(self):
         return self.__y
 
-    def set_x(self, new_x):
-        self.__x = new_x
+    def set_x(self, x):
+        self.__x = x
 
-    def set_y(self, new_y):
-        self.__y = new_y
+    def set_y(self, y):
+        self.__y = y
 
-    def equals(self, other_location):
-        pass
-
-    def __str__(self):
-        return f'Location (x = {self.__x}, y = {self.__y})'
+    def equals(self, location):
+        if isinstance(location, Location):
+            return (self.__x == location.get_x() and
+                    self.__y == location.get_y())
+        return False

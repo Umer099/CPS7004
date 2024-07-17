@@ -1,19 +1,20 @@
 from week5.week4.model.location import Location
 from week5.week4.model.shark import Shark
-from week5.week4.model.environment import Environment
+from week5.week4.model.sardine import Sardine
+
 
 class Tui:
-    def display_environmnet(self, environment):
+
+    def display_environment(self, environment):
         for row in range(environment.get_height()):
             for col in range(environment.get_width()):
                 location = Location(col, row)
-                agent = Environment.get_agent(location):
-                    if agent is None:
-                        print("!", end = "")
-                    elif isinstance(agent, Shark):
-                        print("S", end = "")
+                agent = environment.get_agent(location)
+                if agent is None:
+                    print("~", end="")
+                elif isinstance(agent, Shark):
+                    print("S", end="")
+                elif isinstance(agent, Sardine):
+                    print("D", end="")
 
-
-
-
-
+            print()
